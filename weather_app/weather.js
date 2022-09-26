@@ -36,8 +36,7 @@ const saveCity=async (city)=>{
 const getForCast=async ()=>{
     try{
         const weather=await getWeather();
-        console.log(weather);
-        //printWeather(weather, getIcon(weather.weather[0].icon));
+        printWeather(weather, getIcon(weather.weather[0].icon));
     } catch(e){
         if(e?.response?.status == 404){
             printError('Неверно указан город');
