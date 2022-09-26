@@ -1,5 +1,5 @@
 {
-  "name": "weather_app-cli",
+  "name": "weather_app-cli-demo",
   "version": "1.0.0",
   "description": "CLI for getting weather",
   "main": "weather.js",
@@ -23,7 +23,7 @@
     "url": "https://github.com/only2a/NodeJs_course/tree/main/weather_app"
   },
   "bugs": {
-    "url": "",
+    "url": "https://www.codewars.com/",
     "email": "t5p.2a@mail.ru"
   },
   "dependencies": {
