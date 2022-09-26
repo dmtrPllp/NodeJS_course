@@ -19,7 +19,27 @@ const saveKeyValue=async (key, value)=>{
     await promises.writeFile(filePath,JSON.stringify(data));
 };
 
+const saveCityValue=async (key, value)=>{
+    let data={};
+    if(await isExist(filePath)){
+        const file=await  promises.readFile(filePath);
+        data=JSON.parse(file);
+    }
+    data[key]=value;
+    await promises.writeFile(filePath,JSON.stringify(data));
+};
+
 const getKeyValue= async (key) =>{
+    let data={};
+    if(await isExist(filePath)){
+        const file=await  promises.readFile(filePath);
+        data=JSON.parse(file);
+        return data[key];
+    }
+    return undefined;
+};
+
+const getCityValue= async (key) =>{
     let data={};
     if(await isExist(filePath)){
         const file=await  promises.readFile(filePath);
@@ -45,4 +65,4 @@ const fileRead=async (path)=>{
     let d=JSON.parse(file);
     return d;
 }
-export {saveKeyValue, getKeyValue,TOKEN_DICTIONARY};
+export {saveKeyValue, getKeyValue,TOKEN_DICTIONARY, saveCityValue, getCityValue};
